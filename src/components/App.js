@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Inventory from './Inventory';
 import Order from './Order';
+import samplefishes from '../sample-fishes'
 
 
 class App extends React.Component {
@@ -16,8 +17,11 @@ class App extends React.Component {
         fishes[`fish${Date.now()}`] = fish;
         //3. update the state with the new fishes
         this.setState({ fishes });
+    };
 
-    }
+    loadSampleFishes = () => {
+        this.setState({ fishes: samplefishes });
+    };
 
     render() {
         return (
@@ -26,7 +30,10 @@ class App extends React.Component {
                     <Header tagline="Toby is a Boss" age={500} cool={true}/>
                 </div>
                 <Order/>
-                <Inventory addFish={this.addFish}/>
+                <Inventory 
+                addFish={this.addFish} 
+                loadSampleFishes={this.loadSampleFishes} 
+                />
             </div>
         );
     }
