@@ -4,7 +4,7 @@ export class Fish extends Component {
     render() {
         return (
             <div className="singleFish">
-                 
+               <p>Fish</p>  
             </div>
         )
     }

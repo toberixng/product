@@ -3,6 +3,7 @@ import Header from './Header';
 import Inventory from './Inventory';
 import Order from './Order';
 import samplefishes from '../sample-fishes'
+import Fish from './Fish';
 
 
 class App extends React.Component {
@@ -28,6 +29,9 @@ class App extends React.Component {
             <div className="catch-of-the-day">
                 <div className="menu">
                     <Header tagline="Toby is a Boss" age={500} cool={true}/>
+                    <ul className="fishes">
+                        {Object.keys(this.state.fishes).map(key => <Fish key={key}>{key}</Fish>)}
+                    </ul>
                 </div>
                 <Order/>
                 <Inventory 
