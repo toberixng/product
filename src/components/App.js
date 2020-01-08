@@ -26,7 +26,7 @@ class App extends React.Component {
 
     addToOrder = (key) => {
         // 1. take a copy of state
-        const order = {... this.state.order};
+        const order = {...this.state.order};
         // 2. Either add to the order, or update the order
         order[key] = order[key] + 1 || 1;
         // 3. call setState to update our object
